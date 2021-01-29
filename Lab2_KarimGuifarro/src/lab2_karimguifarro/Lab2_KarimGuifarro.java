@@ -15,10 +15,11 @@ import java.util.*;
 public class Lab2_KarimGuifarro {
 
     public static Scanner KaOz = new Scanner(System.in);
+
     public static void main(String[] args) {
-         ArrayList <String> codigos = new ArrayList () ; 
-         String usuario="";
-         String contraseña="";
+        ArrayList<String> ubicacion = new ArrayList();
+        String usuario = "";
+        String contraseña = "";
         char k = 'c';
         while (k == 'c') {
             System.out.print("*****Menu*****\n"
@@ -27,7 +28,22 @@ public class Lab2_KarimGuifarro {
                     + "3) Manejo de Restarantes\n"
                     + "4)Salida\n");
             int op = KaOz.nextInt();
+            switch (op) {
+                case 1:{
+                    System.out.println("Ingrese el usuario:");
+                    usuario=KaOz.next();
+                    System.out.println("Ingrese la contraseña:");
+                    contraseña=KaOz.next();
+                }
+                case 2:{
+                    System.out.print("Reporte 1\n"
+                            + "Reporte 2 \n"
+                            + "Reporte 3\n");
+                    int p=KaOz.nextInt();
+                    
+                }
+            }
         }
     }
-    
+
 }
