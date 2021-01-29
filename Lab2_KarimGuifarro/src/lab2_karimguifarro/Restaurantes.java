@@ -14,8 +14,8 @@ public class Restaurantes {
     private String nombre;
     private String ubicacion;
     private int cant_empleados;
-    private boolean area_juegos;
-    private boolean parqueo;
+    private String area_juegos;
+    private String parqueo;
     private int cant_mesas;
     private int cant_cajeros;
     private String Gerente;
@@ -26,7 +26,7 @@ public class Restaurantes {
     public Restaurantes() {
     }
 
-    public Restaurantes(String Franquicia, String nombre, String ubicacion, int cant_empleados, boolean area_juegos, boolean parqueo, int cant_mesas, int cant_cajeros, String Gerente, String especialidad, String estado, String tipo) {
+    public Restaurantes(String Franquicia, String nombre, String ubicacion, int cant_empleados, String area_juegos, String parqueo, int cant_mesas, int cant_cajeros, String Gerente, String especialidad, String estado, String tipo) {
         this.Franquicia = Franquicia;
         this.nombre = nombre;
         this.ubicacion = ubicacion;
@@ -73,19 +73,19 @@ public class Restaurantes {
         this.cant_empleados = cant_empleados;
     }
 
-    public boolean isArea_juegos() {
+    public String getArea_juegos() {
         return area_juegos;
     }
 
-    public void setArea_juegos(boolean area_juegos) {
+    public void setArea_juegos(String area_juegos) {
         this.area_juegos = area_juegos;
     }
 
-    public boolean isParqueo() {
+    public String getParqueo() {
         return parqueo;
     }
 
-    public void setParqueo(boolean parqueo) {
+    public void setParqueo(String parqueo) {
         this.parqueo = parqueo;
     }
 
@@ -137,11 +137,12 @@ public class Restaurantes {
         this.tipo = tipo;
     }
 
+   
   
 
     @Override
     public String toString() {
-        return "Restaurantes" + Franquicia  + nombre  + ubicacion +  cant_empleados + area_juegos + parqueo +  cant_mesas + cant_cajeros +  Gerente +  especialidad +  estado + tipo ;
+        return "Restaurantes:" + Franquicia+ " "  + nombre+ " "  + ubicacion+ " " +  cant_empleados+ " " + area_juegos+" " + parqueo+ " " +  cant_mesas+ " " + cant_cajeros+ " " +  Gerente+ " " +  especialidad+ " " +  estado + " " + tipo ;
     }
     
 }
