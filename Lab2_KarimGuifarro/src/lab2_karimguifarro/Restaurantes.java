@@ -21,11 +21,12 @@ public class Restaurantes {
     private String Gerente;
     private String especialidad;
     private String estado;
+    private String tipo;
 
     public Restaurantes() {
     }
 
-    public Restaurantes(String Franquicia, String nombre, String ubicacion, int cant_empleados, boolean area_juegos, boolean parqueo, int cant_mesas, int cant_cajeros, String Gerente, String especialidad, String estado) {
+    public Restaurantes(String Franquicia, String nombre, String ubicacion, int cant_empleados, boolean area_juegos, boolean parqueo, int cant_mesas, int cant_cajeros, String Gerente, String especialidad, String estado, String tipo) {
         this.Franquicia = Franquicia;
         this.nombre = nombre;
         this.ubicacion = ubicacion;
@@ -37,6 +38,7 @@ public class Restaurantes {
         this.Gerente = Gerente;
         this.especialidad = especialidad;
         this.estado = estado;
+        this.tipo = tipo;
     }
 
     public String getFranquicia() {
@@ -127,9 +129,19 @@ public class Restaurantes {
         this.estado = estado;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+  
+
     @Override
     public String toString() {
-        return "Restaurantes{" + "Franquicia=" + Franquicia + ", nombre=" + nombre + ", ubicacion=" + ubicacion + ", cant_empleados=" + cant_empleados + ", area_juegos=" + area_juegos + ", parqueo=" + parqueo + ", cant_mesas=" + cant_mesas + ", cant_cajeros=" + cant_cajeros + ", Gerente=" + Gerente + ", especialidad=" + especialidad + ", estado=" + estado + '}';
+        return "Restaurantes" + Franquicia  + nombre  + ubicacion +  cant_empleados + area_juegos + parqueo +  cant_mesas + cant_cajeros +  Gerente +  especialidad +  estado + tipo ;
     }
     
 }
