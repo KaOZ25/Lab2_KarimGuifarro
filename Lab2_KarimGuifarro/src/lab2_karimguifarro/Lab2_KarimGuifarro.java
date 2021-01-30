@@ -57,7 +57,15 @@ public class Lab2_KarimGuifarro {
                     int p = KaOz.nextInt();
                     switch (p) {
                         case 1: {
-
+                            Printest(restaurant);
+                        }
+                        break;
+                        case 2: {
+                            Printfran(restaurant);
+                        }
+                        break;
+                        case 3: {
+                            Printprem(restaurant);
                         }
                     }
 
@@ -77,7 +85,7 @@ public class Lab2_KarimGuifarro {
                     switch (po) {
                         case 1: {
                             String Franquicia, nombre, ubicacion, gerente = "", especialidad, estado = "", tipo = "";
-                            String area_juegos="", parqueo="";
+                            String area_juegos = "", parqueo = "";
                             int cant_empleados = 0, cant_cajeros = 0, cant_mesas = 0, espac = 0;
                             System.out.println("Ingrese la Franquicia:");
                             Franquicia = KaOz.next();
@@ -97,7 +105,7 @@ public class Lab2_KarimGuifarro {
                             if (parqueo.contains("si")) {
                                 System.out.println("Ingrese la cantidad del parqueo");
                                 espac = KaOz.nextInt();
-                            } 
+                            }
                             System.out.println("Cantidad de mesas:");
                             cant_mesas = KaOz.nextInt();
                             System.out.println("Cantidad de cajeros:");
@@ -105,18 +113,9 @@ public class Lab2_KarimGuifarro {
                             System.out.println("Ingrese su especialidad:");
                             especialidad = KaOz.next();
                             System.out.println("Ingrese el estado del restaurante:");
-                            System.out.print("a)Si se encuentra en remodelacion\n"
-                                    + "b)Si se demolera\n"
-                                    + "c)Si se ecneuntra funcional\n");
-                            String est = KaOz.next();
-                            if (est == "a") {
-                                estado = "Remodelacion";
-
-                            } else if (est == "b") {
-                                estado = "Demolicion";
-                            } else if (est == "c") {
-                                estado = "Funcional";
-                            }
+                            KaOz.nextLine();
+                            estado = KaOz.next();
+                            estado.toLowerCase();
                             if (estado == "Demolicion" || estado == "Remodelacion") {
                                 especialidad = "[N/A]";
                                 gerente = "[N/A]";
@@ -159,22 +158,22 @@ public class Lab2_KarimGuifarro {
                             ubicacion = KaOz.next();
                             System.out.println("Cantidad de empleados:");
                             cant_empleados = KaOz.nextInt();
-                             System.out.println("Posee Area de juegos?[Si/No]");
+                            System.out.println("Posee Area de juegos?[Si/No]");
                             area_juegos = KaOz.next();
                             area_juegos.toLowerCase();
-                            while(!area_juegos.equals("si")|| !area_juegos.equals("no")){
-                                 System.out.println("Ha ingesado un respuesta erronea, intente de nuevo:");
-                                 area_juegos=KaOz.next();
-                                 area_juegos.toLowerCase();
-                             }
+                            while (!area_juegos.equals("si") || !area_juegos.equals("no")) {
+                                System.out.println("Ha ingesado un respuesta erronea, intente de nuevo:");
+                                area_juegos = KaOz.next();
+                                area_juegos.toLowerCase();
+                            }
                             System.out.println("Posee Parqueo?[Si/No]");
                             parqueo = KaOz.next();
                             parqueo.toLowerCase();
-                            while(parqueo!="si"|| parqueo!="no"){
-                                 System.out.println("Ha ingesado un respuesta erronea, intente de nuevo:");
-                                 parqueo=KaOz.next();
-                                 parqueo.toLowerCase();
-                             }
+                            while (parqueo != "si" || parqueo != "no") {
+                                System.out.println("Ha ingesado un respuesta erronea, intente de nuevo:");
+                                parqueo = KaOz.next();
+                                parqueo.toLowerCase();
+                            }
                             if (parqueo == "si") {
                                 System.out.println("Ingrese la cantidad del parqueo");
                                 espac = KaOz.nextInt();
@@ -188,17 +187,14 @@ public class Lab2_KarimGuifarro {
                             System.out.println("Ingrese su especialidad:");
                             especialidad = KaOz.next();
                             System.out.println("Ingrese el estado del restaurante:");
-                            System.out.print("a)Si se encuentra en remodelacion\n"
-                                    + "b)Si se demolera\n"
-                                    + "c)Si se ecneuntra funcional\n");
                             KaOz.nextLine();
-                             estado = KaOz.next();
-                             estado.toLowerCase();
-                            if (estado=="demolicion"|| estado=="remodelacion") {
+                            estado = KaOz.next();
+                            estado.toLowerCase();
+                            if ("demolicion".equals(estado) || "remodelacion".equals(estado)) {
                                 especialidad = "[N/A]";
                                 gerente = "[N/A]";
                                 cant_mesas = 0;
-                            } else if (estado=="funcional") {
+                            } else if ("funcional".equals(estado)) {
                                 System.out.println("Ingrese el nombre del gerente");
                                 gerente = KaOz.next();
                             }
@@ -239,7 +235,7 @@ public class Lab2_KarimGuifarro {
                     k = 'b';
                 }
                 default:
-                    System.out.println("Ingreso un valor erroneo");
+                    System.out.println("Ingreso un valor error");
             }
         }
     }
@@ -250,9 +246,31 @@ public class Lab2_KarimGuifarro {
         }
     }
 
-    static void Printdemo(ArrayList restaurant) {
+    static void Printest(ArrayList restaurant) {
         System.out.println("Que estado dese ver?");
         String est = KaOz.next();
+        for (int i = 0; i < restaurant.size(); i++) {
+            if (restaurant.get(i).equals(est)) {
+                System.out.println("[" + restaurant.get(i) + "]");
+            } else {
+            }
+        }
+    }
+
+    static void Printfran(ArrayList restaurant) {
+        System.out.println("Que franquicia desea ver?");
+        String est = KaOz.next();
+        for (int i = 0; i < restaurant.size(); i++) {
+            if (restaurant.get(i).equals(est)) {
+                System.out.println("[" + restaurant.get(i) + "]");
+            } else {
+            }
+        }
+    }
+
+    static void Printprem(ArrayList restaurant) {
+        System.out.println("Que estado dese ver?");
+        String est = "Premium";
         for (int i = 0; i < restaurant.size(); i++) {
             if (restaurant.get(i).equals(est)) {
                 System.out.println("[" + restaurant.get(i) + "]");
